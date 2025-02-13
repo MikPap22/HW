@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>login page</title>
+    </head>
+
+    <body>
+        <h1 style=color:red>Login</h1>
+    </body>
+
+    <div id="output">Enter your email:</div>
+        <input id ="input">
+        <button onclick="check()">Login</button>
+
+        <script>
+            function check(){
+                let email = document.getElementById("input").value 
+                let output = document.getElementById("output")
+
+                if (email.length == 0)
+                    {output.innerHTML = "You cannot leave this space blank."}
+                else if (email.indexOf("@") < email.lastIndexOf("."))
+                    {output.innerHTML = "Your entered successfully. Welcome!"}
+                else    
+                    {output.innerHTML = "Invalid email format."}
+            }
+        </script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+</html>
