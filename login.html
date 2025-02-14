@@ -9,7 +9,11 @@
 
     <div id="output">Enter your email:</div>
         <input id ="input">
-        <button onclick="check()">Login</button>
+        <button onclick="check()">Submit email</button>
+    <p> </p>
+        <div id="outputpass">Enter your password:</div>
+        <input id ="inputpass">
+        <button onclick="passwordcreate()">Submit password</button>
 
         <script>
             function check(){
@@ -19,9 +23,24 @@
                 if (email.length == 0)
                     {output.innerHTML = "You cannot leave this space blank."}
                 else if (email.indexOf("@") < email.lastIndexOf("."))
-                    {output.innerHTML = "Your entered successfully. Welcome!"}
+                    {output.innerHTML = "You entered successfully. Welcome!"}
                 else    
                     {output.innerHTML = "Invalid email format."}
+            }
+
+
+            function passwordcreate(){
+                let password = document.getElementById("inputpass").value 
+                let outputlogin = document.getElementById("outputpass")
+                let numberpresent = /\d/
+
+                if (password.length == 0)
+                    {outputlogin.innerHTML = "You cannot leave this space blank."}
+                else if (8 <= password.length && numberpresent.test(password)   && password.includes(".")   && password.includes("@") && password.includes("#") )
+                    {outputlogin.innerHTML = "Your password is submitted."}
+                
+                else  
+                    {outputlogin.innerHTML = "Invalid password format. It should have at least 8 characters. Also, Your password should include: @, ., # and any number."}
             }
         </script>
 
